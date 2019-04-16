@@ -3,11 +3,72 @@
   "author": "Ole Consignado",
   "classifications": [ "HostedService" ],
   "identity": "WebHostedWorker",
-  "name": "WebHostedWorker",
-  "shortName": "WebHostedWorker",
+  "name": "Web Hosted Worker",
+  "shortName": "webhostedworker",
   "sourceName": "WebHostedWorker.Template",
   "tags": {
     "language": "C#",
     "type": "project"
-  }  
+  },
+  "symbols": {
+    "K8sParentDomain": {
+      "type": "parameter",
+      "isRequired": "true",
+      "datatype": "string",
+      "replaces": "{{K8sParentDomain}}",
+      "defaultValue": "mykubernetes-cluster.mycompany.com",
+      "description": "Kubernetes ingress parent domain."
+    },
+    "CacheSqlConnectionString": {
+      "type": "parameter",
+      "isRequired": "true",
+      "datatype": "string",
+      "replaces": "{{CacheSqlConnectionString}}",
+      "defaultValue": "Data Source=SQLSERVERHOST,1433;Initial Catalog=CacheCatalog;",
+      "description": "SqlConnectionString to cache catalog."
+    },
+    "CacheTable": {
+      "type": "parameter",
+      "isRequired": "false",
+      "datatype": "string",
+      "replaces": "{{CacheTable}}",
+      "defaultValue": "CacheTable",
+      "description": "Cache table name."
+    },    
+    "DockerHubUser": {
+      "type": "parameter",
+      "isRequired": "false",
+      "datatype": "string",
+      "replaces": "{{DockerHubUser}}",
+      "defaultValue": "oleconsignado",
+      "description": "Docker Hub username."
+    },
+//    "HelmChartName": {
+//      "type": "generated",
+//      "generator": "regex",
+//      "source": "sourceName",
+//      "replaces": "{{HelmChartName}}",
+//      "steps": [
+//        {
+//          "regex": "\\.",
+//          "replacement": ""
+//        }
+//      ]
+//    },
+    "HelmChartName": {
+      "type": "parameter",
+      "isRequired": "true",
+      "datatype": "string",
+      "replaces": "{{HelmChartName}}",
+      "description": "Helm chart/Docker image name."
+    },
+    "UniqueIdentifier": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "{{UniqueIdentifier}}",
+      "parameters": {
+        "format":"X"
+      }      
+    }    
+  }
 }
