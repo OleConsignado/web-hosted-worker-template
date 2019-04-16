@@ -1,0 +1,1 @@
+# web-hosted-worker-template
