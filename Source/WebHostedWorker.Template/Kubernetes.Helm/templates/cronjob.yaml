@@ -6,6 +6,9 @@ spec:
   schedule: "{{ .Values.cronJobSchedule }}"
   jobTemplate:
     spec:
+      concurrencyPolicy: Forbid
+      successfulJobsHistoryLimit: 1
+      failedJobsHistoryLimit: 1
       template:
         spec:
           containers:
