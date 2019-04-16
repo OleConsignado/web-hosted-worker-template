@@ -1,0 +1,53 @@
+parentDomain: "*****"
+replicaCount: 1
+image:
+  repository: oleconsignado/webhostedworkertemplate
+  tag: 0
+dockerRegistrationSecret: ole-docker-reg
+
+# Runtime
+ASPNETCORE_ENVIRONMENT: "Development"
+TZ: "America/Sao_Paulo"
+
+# Log
+Serilog__MinimumLevel__Default: Warning
+Serilog__MinimumLevel__Override__Ole: Information
+Serilog__MinimumLevel__Override__Otc: Information
+RequestTrackerConfiguration__RequestTrackerEnabled: "true"
+
+# Core
+# variaveis de ambiente que afetam comportamentos de negocio
+
+# Servicos externos
+# apontamentos para servicos hospedados fora do kubernetes
+# WSAutorizador: "http://wsautorizador.oleconsignado.com.br/"
+
+# DB
+# strings de conexao com banco de dados
+
+# Cache
+DistributedCacheConfiguration__CacheStorageType: "SqlServer"
+DistributedCacheConfiguration__CacheSqlConnectionString: "*****"
+DistributedCacheConfiguration__CacheSqlSchemaName: "dbo"
+DistributedCacheConfiguration__CacheSqlTableName: "CacheTable"
+
+# Jwt
+JwtConfiguration__Audience: "webhostedworkertemplate"
+JwtConfiguration__Issuer: "webhostedworkertemplate"
+JwtConfiguration__SecretKey: "123456789jfun44rk"
+
+# Recursos
+memoryRequest: "256Mi"
+cpuRequest: "100m"
+memoryLimit: "384Mi"
+cpuLimit: "400m"
+
+# WebHostedWorker Schedule
+#
+#                  +---------------- minute (0 - 59)
+#                  |    +------------- hour (0 - 23)
+#                  |    |    +---------- day of month (1 - 31)
+#                  |    |    |    +------- month (1 - 12)
+#                  |    |    |    |    +---- day of week (0 - 6) (Sunday=0 or 7)
+#                  |    |    |    |    | 
+cronJobSchedule: "*/5   *    *    *    *"
