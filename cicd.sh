@@ -17,6 +17,7 @@ function build
 
 function test
 {
+	echo > /dev/null
 }
 
 function deploy
