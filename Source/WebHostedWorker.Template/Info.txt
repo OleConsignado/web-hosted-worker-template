@@ -1,1 +1,0 @@
-﻿This project is based in WebHostedWorker package (https://github.com/OleConsignado/otc-hosted-worker).
