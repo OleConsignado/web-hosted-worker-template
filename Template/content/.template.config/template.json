@@ -11,61 +11,49 @@
     "type": "project"
   },
   "symbols": {
-    "K8sParentDomain": {
+    "k8sParentDomain": {
       "type": "parameter",
       "isRequired": "true",
       "datatype": "string",
-      "replaces": "{{K8sParentDomain}}",
+      "replaces": "{{k8sParentDomain}}",
       "defaultValue": "mykubernetes-cluster.mycompany.com",
       "description": "Kubernetes ingress parent domain."
     },
-    "CacheSqlConnectionString": {
+    "cacheSqlConnectionString": {
       "type": "parameter",
       "isRequired": "true",
       "datatype": "string",
-      "replaces": "{{CacheSqlConnectionString}}",
-      "defaultValue": "Data Source=SQLSERVERHOST,1433;Initial Catalog=CacheCatalog;",
-      "description": "SqlConnectionString to cache catalog."
+      "replaces": "{{cacheSqlConnectionString}}",
+      "defaultValue": "",
+      "description": "SqlConnectionString to cache catalog. Example: Data Source=SQLSERVERHOST,1433;Initial Catalog=CacheCatalog;"
     },
-    "CacheTable": {
+    "cacheTable": {
       "type": "parameter",
       "isRequired": "false",
       "datatype": "string",
-      "replaces": "{{CacheTable}}",
+      "replaces": "{{cacheTable}}",
       "defaultValue": "CacheTable",
       "description": "Cache table name."
     },    
-    "DockerHubUser": {
+    "dockerHubUser": {
       "type": "parameter",
       "isRequired": "false",
       "datatype": "string",
-      "replaces": "{{DockerHubUser}}",
+      "replaces": "{{dockerHubUser}}",
       "defaultValue": "oleconsignado",
       "description": "Docker Hub username."
     },
-//    "HelmChartName": {
-//      "type": "generated",
-//      "generator": "regex",
-//      "source": "sourceName",
-//      "replaces": "{{HelmChartName}}",
-//      "steps": [
-//        {
-//          "regex": "\\.",
-//          "replacement": ""
-//        }
-//      ]
-//    },
-    "HelmChartName": {
+    "helmChartName": {
       "type": "parameter",
       "isRequired": "true",
       "datatype": "string",
-      "replaces": "{{HelmChartName}}",
+      "replaces": "{{helmChartName}}",
       "description": "Helm chart/Docker image name."
     },
-    "UniqueIdentifier": {
+    "uniqueIdentifier": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "{{UniqueIdentifier}}",
+      "replaces": "{{uniqueIdentifier}}",
       "parameters": {
         "format":"X"
       }      

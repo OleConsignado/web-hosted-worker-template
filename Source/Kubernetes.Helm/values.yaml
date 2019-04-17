@@ -1,7 +1,7 @@
-parentDomain: {{K8sParentDomain}}
+parentDomain: {{k8sParentDomain}}
 replicaCount: 1
 image:
-  repository: {{DockerHubUser}}/{{HelmChartName}}
+  repository: {{dockerHubUser}}/{{helmChartName}}
   tag: 0
 dockerRegistrationSecret: ole-docker-reg
 
@@ -27,14 +27,14 @@ RequestTrackerConfiguration__RequestTrackerEnabled: "true"
 
 # Cache
 DistributedCacheConfiguration__CacheStorageType: "SqlServer"
-DistributedCacheConfiguration__CacheSqlConnectionString: "{{CacheSqlConnectionString}};Application Name={{HelmChartName}};"
+DistributedCacheConfiguration__CacheSqlConnectionString: "{{cacheSqlConnectionString}};Application Name={{helmChartName}};"
 DistributedCacheConfiguration__CacheSqlSchemaName: "dbo"
-DistributedCacheConfiguration__CacheSqlTableName: "{{CacheTable}}"
+DistributedCacheConfiguration__CacheSqlTableName: "{{cacheTable}}"
 
 # Jwt
-JwtConfiguration__Audience: "{{HelmChartName}}"
-JwtConfiguration__Issuer: "{{HelmChartName}}"
-JwtConfiguration__SecretKey: "{{UniqueIdentifier}}"
+JwtConfiguration__Audience: "{{helmChartName}}"
+JwtConfiguration__Issuer: "{{helmChartName}}"
+JwtConfiguration__SecretKey: "{{uniqueIdentifier}}"
 
 # Recursos
 memoryRequest: "256Mi"
