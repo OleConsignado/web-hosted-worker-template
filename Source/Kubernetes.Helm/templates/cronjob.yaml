@@ -1,7 +1,12 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: {{ .Values.Name | default .Chart.Name }}-cronjob
+  name: {{ .Values.Name | default .Chart.Name }}-job
+  labels:
+    app: {{ .Values.Name | default .Chart.Name }}-job
+    chart: {{ .Values.Name | default .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}  
 spec:
   schedule: "{{ .Values.cronJobSchedule }}"
   jobTemplate:
@@ -12,14 +17,10 @@ spec:
       template:
         spec:
           containers:
-          - name: {{ .Values.Name | default .Chart.Name }}-cronjob
-            image: byrnedo/alpine-curl:0.1.7
+          - name: {{ .Values.Name | default .Chart.Name }}-job
+            image: busybox:1.30.1
             args:
             - /bin/sh
-            - -c
-            - curl
-            - -s
-            - -X
-            - POST
-            - http://{{ .Values.Name | default .Chart.Name }}/v1/Trigger/Pull
+            - -ec
+            - "/bin/wget --post-data='' -S -O - http://{{ .Values.Name | default .Chart.Name }}/v1/Trigger/Pull"
           restartPolicy: Never
