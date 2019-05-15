@@ -52,7 +52,7 @@ cpuLimit: "400m"
 #    Apos WorkerTimeoutInSeconds, sera solicitado encerramento por meio do cancelationToken.
 #
 #    Valor padrao: 60
-HostedWorkerConfiguration__WorkerTimeoutInSeconds: 60
+HostedWorkerConfiguration__WorkerTimeoutInSeconds: "60"
 
 # -- WorkerTerminationTorerationTimeoutInSeconds --
 #
@@ -61,7 +61,7 @@ HostedWorkerConfiguration__WorkerTimeoutInSeconds: 60
 #    WorkerTerminationTorerationTimeoutInSeconds, a aplicacao como um todo sera encerrada.
 #
 #    Valor padrao: 15
-HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds: 15
+HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds: "15"
 
 # -- MaxConsecutiveErrors --
 #
@@ -69,7 +69,7 @@ HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds: 15
 #    erros consecutivos, a aplicacao sera encerrada.
 #
 #    Valor padrao: 5
-HostedWorkerConfiguration__MaxConsecutiveErrors: 5
+HostedWorkerConfiguration__MaxConsecutiveErrors: "5"
 
 # WebHostedWorker Schedule
 #

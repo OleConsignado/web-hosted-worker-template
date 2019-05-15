@@ -65,7 +65,7 @@ data:
   #    Apos WorkerTimeoutInSeconds, sera solicitado encerramento por meio do cancelationToken.
   #
   #    Valor padrao: 60
-  HostedWorkerConfiguration__WorkerTimeoutInSeconds: {{ .Values.HostedWorkerConfiguration__WorkerTimeoutInSeconds }}
+  HostedWorkerConfiguration__WorkerTimeoutInSeconds: "{{ .Values.HostedWorkerConfiguration__WorkerTimeoutInSeconds }}"
 
   # -- WorkerTerminationTorerationTimeoutInSeconds --
   #
@@ -74,7 +74,7 @@ data:
   #    WorkerTerminationTorerationTimeoutInSeconds, a aplicacao como um todo sera encerrada.
   #
   #    Valor padrao: 15
-  HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds: {{ .Values.HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds }}
+  HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds: "{{ .Values.HostedWorkerConfiguration__WorkerTerminationTorerationTimeoutInSeconds }}"
 
   # -- MaxConsecutiveErrors --
   #
@@ -82,4 +82,4 @@ data:
   #    erros consecutivos, a aplicacao sera encerrada.
   #
   #    Valor padrao: 5
-  HostedWorkerConfiguration__MaxConsecutiveErrors: {{ .Values.HostedWorkerConfiguration__MaxConsecutiveErrors }}
+  HostedWorkerConfiguration__MaxConsecutiveErrors: "{{ .Values.HostedWorkerConfiguration__MaxConsecutiveErrors }}"
