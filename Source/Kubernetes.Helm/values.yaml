@@ -80,3 +80,9 @@ HostedWorkerConfiguration__MaxConsecutiveErrors: "5"
 #                  |    |    |    |    +---- day of week (0 - 6) (Sunday=0 or 7)
 #                  |    |    |    |    | 
 cronJobSchedule: "*/15  *    *    *    *"
+
+# Suspend the cronJob to start
+#
+#    If false, the cronjob is actively scheduling job, if true existing job will not be forced 
+#    to terminate but new ones cannot be scheduled;
+cronJobSuspended: "false"
