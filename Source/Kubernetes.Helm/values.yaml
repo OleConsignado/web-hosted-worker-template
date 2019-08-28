@@ -85,4 +85,4 @@ cronJobSchedule: "*/15  *    *    *    *"
 #
 #    If false, the cronjob is actively scheduling job, if true existing job will not be forced 
 #    to terminate but new ones cannot be scheduled;
-cronJobSuspended: "false"
+cronJobSuspended: false

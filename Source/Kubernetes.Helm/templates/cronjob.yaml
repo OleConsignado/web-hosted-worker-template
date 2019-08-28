@@ -9,7 +9,7 @@ metadata:
     heritage: {{ .Release.Service }}  
 spec:
   schedule: "{{ .Values.cronJobSchedule }}"
-  suspend: "{{ .Values.cronJobSuspended }}"
+  suspend: {{ .Values.cronJobSuspended }}
   jobTemplate:
     spec:
       concurrencyPolicy: Forbid
