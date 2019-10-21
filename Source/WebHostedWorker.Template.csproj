@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Otc.WebHostedWorker" Version="1.0.0-v100-beta1-build5" />
+    <PackageReference Include="Otc.WebHostedWorker" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
