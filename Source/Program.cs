@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace WebHostedWorker.Template
 {
-    [ExcludeFromCodeCoverage]
     public class Program
     {
         public static void Main(string[] args)
