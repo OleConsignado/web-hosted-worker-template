@@ -22,12 +22,13 @@ namespace WebHostedWorker.Template
 
         public HostedWorker(ILoggerFactory loggerFactory)
         {
-            logger = loggerFactory?.CreateLogger<HostedWorker>() ?? throw new System.ArgumentNullException(nameof(loggerFactory));
+            logger = loggerFactory?.CreateLogger<HostedWorker>() ?? 
+                throw new System.ArgumentNullException(nameof(loggerFactory));
         }
 
         public async Task WorkAsync(CancellationToken cancellationToken)
         {
-            logger.LogInformation("WorkAsync begin.");
+            logger.LogInformation($"{nameof(WorkAsync)} begin.");
 
             try
             {
@@ -35,10 +36,11 @@ namespace WebHostedWorker.Template
                 {
                     if (cancellationToken.IsCancellationRequested)
                     {
-                        throw new OperationCanceledException($"Operation was canceled, perfomed {i} iterations of {WorkIterations}.", cancellationToken);
+                        throw new OperationCanceledException($"Operation was canceled, perfomed {i} " +
+                            $"iterations of {WorkIterations}.", cancellationToken);
                     }
 
-                    logger.LogInformation("WorkAsync iteration #{IterationIndex}", i);
+                    logger.LogInformation($"{nameof(WorkAsync)} iteration #{{IterationIndex}}", i);
 
                     await Task.Delay(WorkLoopIterationDelay);
                 }
@@ -48,7 +50,7 @@ namespace WebHostedWorker.Template
                 logger.LogWarning(e, "Cacelation requested.");
             }
 
-            logger.LogInformation("WorkAsync end.");
+            logger.LogInformation($"{nameof(WorkAsync)} end.");
         }
     }
 }

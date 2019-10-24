@@ -14,7 +14,8 @@ namespace WebHostedWorker.Template
         protected override ApiMetadata ApiMetadata => new ApiMetadata()
         {
             Name = "WebHostedWorker.Template",
-            Description = "This project is based in WebHostedWorker package (https://github.com/OleConsignado/otc-hosted-worker).",
+            Description = "This project is based in WebHostedWorker package " +
+                "(https://github.com/OleConsignado/otc-hosted-worker).",
             DefaultApiVersion = "1.0"
         };
 
@@ -34,7 +35,6 @@ namespace WebHostedWorker.Template
         /// Worker dependencies registration.
         /// </summary>
         /// <param name="services">The service collection</param>
-        [ExcludeFromCodeCoverage]
         protected override void ConfigureWebHostedWorkerServices(IServiceCollection services)
         {
             // Worker dependencies registration goes here
